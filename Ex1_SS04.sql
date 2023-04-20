@@ -1,7 +1,8 @@
 USE QUANLYSINHVIEN;
 -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
-SELECT subid,subname,MAX(subject.Credit)
-FROM SUBJECT;
+SELECT *
+FROM SUBJECT
+WHERE credit = (select max(credit) from subject);
 -- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 select s.subid,s.subname,max(mark.mark) as "Highest Mark"
 from subject s join mark on s.subid = mark.SubId

@@ -9,4 +9,5 @@ group by s.SubName;
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
 select s.studentid, s.studentname, s.address, s.phone, avg(mark.Mark) AvgMark
 from student s join mark on s.StudentId = mark.StudentId
-group by s.StudentName;
+group by s.StudentName
+order by (mark.mark) DESC;
